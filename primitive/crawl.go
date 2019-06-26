@@ -16,7 +16,7 @@ func getRequest(url string) string {
 	}
 	resp, err := httpClient.Get(url)
 	if err != nil {
-		fmt.Print("Network is down.")
+		log.Fatal(err)
 		return ""
 	}
 	defer resp.Body.Close()
